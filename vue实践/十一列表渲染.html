@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <style>
+    *{
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <ul>人员列表
+      <li v-for="(p, index) in sorted" :key="p.id">{{p.name}}今年已经{{p.age}}</li>
+    </ul>
+    <button @click="sort=1">点击年龄正排序</button>
+    <button @click="sort=0">点击年龄倒排序</button>
+    
+  </div>
+  <script>
+    const vm = new Vue({
+      el:'#root',
+      data:{
+        sort:0,
+        person:[
+          {id:'001', name:'张1', age:118},
+          {id:'002', name:'张2', age:13},
+          {id:'003', name:'张3', age:98},
+          {id:'004', name:'张4', age:89}
+        ]
+      },
+      computed:{
+        sorted(){
+          return this.sort? this.person.sort((a,b)=>a.age-b.age):this.person.sort((a,b)=>b.age-a.age)
+        }
+      }
+
+    })
+  </script>
+</body>
+</html>

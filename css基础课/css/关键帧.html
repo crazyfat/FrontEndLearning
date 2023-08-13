@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<style>
+  .myStyle{
+    background-color: aquamarine;
+  }
+  /*.side-enter-active{*/
+  /*  animation: slide 0.5s linear;*/
+  /*}*/
+  /*.slide-leave-active{*/
+  /*  animation: slide 0.5s reverse;*/
+  /*}*/
+  /*@keyframes slide {*/
+  /*  from{*/
+  /*    transform: translateX(-100%);*/
+  /*  }*/
+  /*  to{*/
+  /*    transform: translateX(100%);*/
+  /*  }*/
+  /*}*/
+  /* 进入的起点、离开的终点 */
+  .hello-enter,.hello-leave-to {
+    transform: translateX(-100%);
+  }
+  .hello-enter-active,.hello-leave-active{
+    transition: 0.5s linear;
+  }
+  /* 进入的终点、离开的起点 */
+  .hello-enter-to,.hello-leave {
+    transform: translateX(0);
+  }
+</style>
+
+<div id="root">
+  <transition name="hello" appear>
+    <h1 class="myStyle" v-show="isShow">这是一个标题</h1>
+  </transition>
+  <button @click="switchShow">切换状态</button>
+
+</div>
+<script>
+  const vm = new Vue({
+    el:'#root',
+    data:{
+      isShow:true
+    },
+    methods:{
+      switchShow(){
+        console.log('111')
+        this.isShow = !this.isShow
+      }
+    }
+  })
+  console.log(vm)
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      height: 100px;
+    }
+    .left{
+      float: left;
+      width: 200px;
+      height: 100px;
+      background-color: #bbffaa;
+    }
+    .right{
+      margin-left: 200px;
+      background-color: coral;
+      width: auto;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<div style="height: 20px">两栏-浮动</div>
+<div class="outer">
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+
+<div style="height: 20px">两栏-浮动BFC</div>
+<div style="height: 100px">
+  <div style="float: left; width: 200px; background-color: #bbffaa; height: 100px"></div>
+  <div style="height: 100px;background-color:coral;overflow: hidden"></div>
+</div>
+
+<div style="height: 20px">两栏-flex</div>
+<div style="display: flex;height: 100px">
+  <div style="width: 200px; background-color: #bbffaa; height: 100px"></div>
+  <div style="height: 100px;background-color:coral;flex: 1;"></div>
+</div>
+
+<div style="height: 20px">两栏-position</div>
+<div style="position:relative;height: 100px">
+  <div style="width: 200px; background-color: #bbffaa; height: 100px"></div>
+  <div style="height: 100px;background-color:coral;position: absolute;left: 200px;top:0;">gffdgsfgdfdsg</div>
+</div>
+
+
+
+</body>
+</html>

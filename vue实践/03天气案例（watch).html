@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>天气案例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>当前天气{{info}}</h2>
+      <button @click="change">切换天气</button>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const vm = new Vue({
+      el:'#root',
+      data:{
+        is_hot:true
+      },
+      computed:{
+        info(){
+          return this.is_hot?'hot':'cold';
+        }
+      },
+      methods:{
+        change(){
+          this.is_hot = !this.is_hot;
+        }
+      },
+      watch:{
+        info:{
+          handler(n, o){
+            console.log(n+" "+o);
+          }
+        }
+      }
+    })
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      /* ”*“ 表示匹配所有标签，性能差 不建议使用*/
+      *{
+        color: red;
+      }
+      /*标签选择器*/
+      p{
+        background-color: aqua;
+      }
+      /*类选择器*/
+      .c{
+        font-size: 100px;
+      }
+      /*id选择器*/
+      #content{
+        border: red;
+        border-width: 2px;
+      }
+      /*派生选择器*/
+
+    </style>
+
+</head>
+<body>
+    <p>这是*匹配</p>
+    <p class="c">类选择器</p>
+<!--    p#content-->
+    <p id="content">this is content</p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>姓名案例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      姓： <input type="text" v-model="first_name"><br><br>
+      名： <input type="text" v-model="last_name"><br><br>
+      姓名： <span>{{full_name}}</span>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    const vm = new Vue({
+      el:'#root',
+      data:{
+        first_name:'张',
+        last_name:'三'
+      },
+      // methods:{
+      //   full_name(){
+      //     return this.first_name.slice(0, 3)+'-'+this.last_name;
+      //   }
+      // },
+      computed:{
+        full_name:{
+          get(){
+            //get中的this指向被vue框架自动调整成为vm
+            //使用计算属性对比插值属性来说，插值属性在每次读取full_name时都会调用methods，显然效率不高
+            //对于计算属性的get而言，会有缓存：1、初次读取full_name；2、所依赖的数据发生变化时(first_name\last_name)
+            return this.first_name+this.last_name;
+          },
+          //当full那么被修改时
+          set(value){
+            return value;
+          }
+        }
+      }
+    })
+  </script>
+</html>

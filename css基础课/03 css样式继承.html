@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .test span{
+        font-size: 20px;
+        color: red;!important;/*直接将这个属性的优先级提高到1w*/
+      }
+      /*子样式自动继承父样式属性 同时也可以进行改写*/
+      span{
+        font-weight: bolder;
+      }
+    </style>
+</head>
+<body>
+    <div class="test">这是外层div <span>这是内层span</span>。!!!</div>
+
+</body>
+</html>

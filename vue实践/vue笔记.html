@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript">
+    const obj = {
+      f1(){
+        console.log(this);
+      },
+      f2:()=>{
+        console.log(this);
+      },
+      obj2:{
+        f3(){
+          console.log(this);
+          const func = ()=>{
+            console.log(this);
+          }
+          func();
+        },
+      }
+    }
+    obj.obj2.f3();
+    // obj.obj2.f4();
+  </script>
+</html>

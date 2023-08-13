@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<button>点击防抖</button>
+<hr>
+<button>点击节流</button>
+<script>
+    import {throttle, debounce} from "./防抖与节流";
+
+    const btn = document.querySelectorAll('button')
+    btn[0].onclick = debounce(()=>{
+        alert('click')
+    }, 1000)
+
+    btn[1].onclick = throttle(()=>{
+        alert('click')
+    }, 1000)
+</script>
+</body>
+</html>
