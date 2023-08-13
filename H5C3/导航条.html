@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    .nav{
+      width: 1176px;
+      height: 48px;
+      background-color: #E8E7E3;
+      margin: 100px auto;
+    }
+    .nav li{
+      /* 浮动li元素 */
+      float: left;
+      line-height: 48px;
+    }
+    li a{
+      /* 升级为块元素，使之继承父类宽高，
+      否则鼠标悬浮在li内a外时，不能点选链接 */
+      display: block;
+      padding: 0 35px;
+      text-decoration: none;
+      /* 内容水平居中 */
+      text-align: center;
+      font-size: 18px;
+      color: #777777;
+      font-family: Verdana, Arial, '微软雅黑', '宋体';
+    }
+
+    li a:hover{
+      background-color: #3f3f3f;
+      color: #E8E7E3;
+    }
+  </style>
+
+</head>
+<body>
+<ul class="nav">
+  <li><a href="">HTML/CSS</a></li>
+  <li><a href="">Browser Side</a></li>
+  <li><a href="">Server Side</a></li>
+  <li><a href="">Programming</a></li>
+  <li><a href="">XML</a></li>
+  <li><a href="">Web Building</a></li>
+  <li><a href="">Reference</a></li>
+</ul>
+</body>
+</html>

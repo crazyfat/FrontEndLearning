@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+    <div id="box1"></div>
+    <div id="box2">
+        <div id="box3">
+            <div id="box5"></div>
+        </div>
+        <div id="box4"></div>
+    </div>
+</div>
+<!--BFS顺序应该为：root--box1--box2--box3-box4-box5-->
+<script>
+    const root = document.getElementById('root')
+    //console.log(root)
+    let que = []
+    que.push(root)
+    while(que.length>0){
+        let tmp = que.shift()
+        console.log(tmp)
+        for(let node of tmp.children)
+            que.push(node)
+    }
+</script>
+</body>
+</html>

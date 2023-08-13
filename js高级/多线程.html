@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div>
+    <input type="text" placeholder="number" id="input">
+    <button id="btn">计算</button>
+  </div>
+  <script>
+    function f(num){
+      return num<=2? 1:f(num-1)+f(num-2)
+    }
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', ()=>{
+      let input = document.getElementById('input')
+      //console.log(value)
+      alert(f(input.value))
+    })
+  </script>
+</body>
+</html>

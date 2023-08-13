@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>列表排序</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>人员列表</h2>
+      <input type="text" placeholder="请输入名字" v-model="keyword">
+      <button @click="is_sort=1">年龄排序</button>
+      <button @click="is_sort=0">原顺序</button>
+      <ul>
+        <li v-for="(p,index) of filePersons" :key="p.id">
+          {{p.name}}--{{p.age}}--{{p.sex}}
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const vm = new Vue({
+      el:'#root',
+      data: {
+        is_sort : 0,
+        keyword : '',
+        persons: [
+          {id: "001", name:'周冬雨', age:20, sex:'女'},
+          {id: "002", name:'马冬梅', age:19, sex:'女'},
+          {id: "003", name:'周杰伦', age:21, sex:'男'},
+          {id: "004", name:'温兆伦', age:22, sex: '男'},
+        ],
+      },
+      computed:{
+        //get()什么时候被调用?：当初次读取计算属性或者计算属性所依赖的数据发生变化时被调用，getter函数有一个返回值，该返回值就是计算属性的值
+        filePersons(){
+          let arr = this.persons.filter(p => p.name.indexOf(this.keyword) !== -1);
+          if(this.is_sort){
+            arr.sort((a, b)=>(a.age-b.age));
+          }
+          console.log(arr);
+          return arr;
+        }
+      },
+      methods:{
+        sortByAge(){
+          console.log("@@@");
+          this.filePersons.sort((a, b)=>(a.age-b.age));
+          console.log(this.filePersons)
+        }
+      }
+    })
+  </script>
+</html>

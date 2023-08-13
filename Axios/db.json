@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 3,
+      "title": "任意自然",
+      "author": "张丽雅"
+    },
+    {
+      "id": 4,
+      "title": "阿贾克斯",
+      "author": "史蒂夫"
+    },
+    {
+      "id": 40,
+      "title": "就发货就",
+      "author": "雎鸠哇"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--生成表格快捷键：table>tr>td{content}*3-->
+<table>
+  <tr>
+    <td>content</td>
+    <td>content</td>
+    <td>content</td>
+  </tr>
+
+<!--表格跨行跨列：rowspan -->
+<!--Emmet 语法 table[border=1 width=500 align=center]>tr*3>td{content$$}*3-->
+  <!--align 水平对齐 valign 垂直对齐（top middle bottom）-->
+  <table border="1" width="500" align="center">
+    <tr>
+      <td rowspan="2">content01</td>
+
+      <td>content02</td>
+      <td>content03</td>
+    </tr>
+    <tr>
+      <td>content02</td>
+      <td>content03</td>
+    </tr>
+    <tr>
+      <td colspan="3">content01</td>
+    </tr>
+  </table>
+
+  <!--完整表格：caption thead tbody tfoot-->
+<!--  table[border=1 width=600 align=center]>caption{学生基本信息}+thead>tr>th*4+tbody>tr*3>td*4+tfoot>tr>td[colspan=3]-->
+  <table border="1" width="600" align="center">
+    <caption>学生基本信息</caption>
+    <thead>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>001</td>
+      <td>w</td>
+      <td>w</td>
+      <td>w</td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>w</td>
+      <td>w</td>
+      <td>w</td>
+    </tr>
+    <tr>
+      <td>003</td>
+      <td>w</td>
+      <td>w</td>
+      <td>w</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td align="center" colspan="4">fdsfa dsfdsa </td>
+    </tr>
+    </tfoot>
+  </table>
+  
+</table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <sch></sch>
+    <stu></stu>
+</div>
+<script>
+  const school = Vue.extend({
+      template:`
+          <div>
+            <h1>a value:{{a}}</h1>
+            <h2>b value:{{b}}</h2>
+          </div>
+      `,
+      data(){
+          return{
+              a:111,
+              b:222
+          }
+      }
+  })
+  const student = Vue.extend({
+      template:`
+        <div>
+            <h1>student</h1>
+        </div>
+      `
+  })
+  const vm = new Vue({
+      el:'#root',
+      components:{
+          sch:school,
+          stu:student
+      }
+  })
+</script>
+</body>
+</html>
